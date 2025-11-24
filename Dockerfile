@@ -39,8 +39,11 @@ RUN a2enmod rewrite
 
 WORKDIR /var/www/html
 
-# Copy the entire app directory (including vendor to avoid SSL issues during build)
+# Copy the PHP application and vendor dependencies
 COPY app/ ./
+
+# Copy standalone HTML entry points living at the repo root
+COPY *.html ./
 
 # Only run composer install if vendor directory is missing or incomplete
 # Since vendor already exists in the app directory, this should be skipped

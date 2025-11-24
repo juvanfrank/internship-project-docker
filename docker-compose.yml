@@ -6,6 +6,10 @@ services:
       - "8080:80"
     volumes:
       - ./app:/var/www/html
+      - ./index.html:/var/www/html/index.html
+      - ./login.html:/var/www/html/login.html
+      - ./register.html:/var/www/html/register.html
+      - ./profile.html:/var/www/html/profile.html
     networks:
       - app-network
     depends_on:
